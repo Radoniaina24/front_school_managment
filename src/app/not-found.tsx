@@ -18,7 +18,7 @@ export default function notFound() {
           </p>
           <Link href="/">
             <button className=" sm rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
-              Retour à l'accueil
+              Retour à l&pos;accueil
             </button>
           </Link>
         </div>
