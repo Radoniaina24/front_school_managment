@@ -87,7 +87,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Teachers",
-        route: "#",
+        route: "/teacher",
       },
       {
         icon: (
@@ -108,7 +108,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Class",
-        route: "#",
+        route: "/classe",
       },
       {
         icon: (
@@ -129,7 +129,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Subjects",
-        route: "#",
+        route: "/subject",
       },
     ],
   },
