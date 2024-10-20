@@ -2,7 +2,7 @@ import Calendar from "@/components/Calender";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calender | Intello",
+  title: "Calender",
 };
 
 const CalendarPage = () => {
