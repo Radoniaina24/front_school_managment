@@ -10,7 +10,7 @@ export default function Loading({
   children: React.ReactNode;
 }>) {
   const [loading, setLoading] = useState<boolean>(true);
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
   const auth = isAuthenticated ? (
     <DefaultLayout>{children}</DefaultLayout>
   ) : (
