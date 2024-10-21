@@ -342,6 +342,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("flowbite/plugin")({
+      datatables: true,
+    }),
+  ],
 };
 export default config;
