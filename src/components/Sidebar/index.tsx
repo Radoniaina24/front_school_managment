@@ -6,6 +6,8 @@ import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import ListSudentSvg from "./svg/ListSudentSvg";
+import AddStudentSvg from "./svg/AddStudentSvg";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -66,7 +68,19 @@ const menuGroups = [
           </svg>
         ),
         label: "Students",
-        route: "/student",
+        route: "#",
+        children: [
+          {
+            icon: <ListSudentSvg />,
+            label: "List students",
+            route: "/student",
+          },
+          {
+            icon: <AddStudentSvg />,
+            label: "Add student",
+            route: "/student/add",
+          },
+        ],
       },
       {
         icon: (

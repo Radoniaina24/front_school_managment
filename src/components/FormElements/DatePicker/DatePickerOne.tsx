@@ -1,29 +1,56 @@
 import flatpickr from "flatpickr";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const DatePickerOne = () => {
+const DatePickerOne = ({
+  label,
+  value,
+  setFieldValue,
+  id,
+  error,
+  touched,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  id: string;
+  setFieldValue?: any;
+  error: any;
+  touched: any;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}) => {
+  const [date, setDate] = useState<string>(value);
+  const classNameInput =
+    error && touched
+      ? `${id} form-datepicker bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm outline-none rounded focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500`
+      : `${id} form-datepicker w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary`;
+  const classNameLabel =
+    error && touched
+      ? "block mb-2 text-sm font-medium text-red-700 dark:text-red-500"
+      : "mb-2.5 block text-sm font-medium text-black dark:text-white";
   useEffect(() => {
     // Init flatpickr
-    flatpickr(".form-datepicker", {
+    flatpickr(`.${id}`, {
       mode: "single",
+      defaultDate: value,
       static: true,
       monthSelectorType: "static",
-      dateFormat: "M j, Y",
+      dateFormat: "j/m/Y",
       prevArrow:
         '<svg className="fill-current" width="7" height="11" viewBox="0 0 7 11"><path d="M5.4 10.8l1.4-1.4-4-4 4-4L5.4 0 0 5.4z" /></svg>',
       nextArrow:
         '<svg className="fill-current" width="7" height="11" viewBox="0 0 7 11"><path d="M1.4 10.8L0 9.4l4-4-4-4L1.4 0l5.4 5.4z" /></svg>',
+      onChange: function (selectedDates, dateStr, instance) {
+        setFieldValue(id, dateStr, true);
+        setDate(dateStr);
+      },
     });
-  }, []);
-
+  }, [date]);
   return (
-    <div>
-      <label className="mb-3 block text-sm font-medium text-black dark:text-white">
-        Date picker
-      </label>
+    <div className="mb-1">
+      <label className={classNameLabel}>{label}</label>
       <div className="relative">
         <input
-          className="form-datepicker w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+          className={classNameInput}
           placeholder="mm/dd/yyyy"
           data-class="flatpickr-right"
         />
@@ -43,6 +70,13 @@ const DatePickerOne = () => {
           </svg>
         </div>
       </div>
+      {error && touched ? (
+        <p className="mt-2 text-sm text-red-600 dark:text-red-500">
+          <span className="font-medium"></span> {error}
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
