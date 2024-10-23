@@ -9,6 +9,7 @@ import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
 import SelectGender from "@/components/SelectGroup/SelectGender";
 import { useAddStudentMutation } from "@/lib/api/studentApi";
 import { useSnackbar } from "@/lib/context/SnackbarContext";
+import Spinner from "@/components/spinner/Spinner";
 const StudentSchema = yup.object({
   name: yup.string().required("Ce champ est requis"),
   first_name: yup.string().required("Ce champ est requis"),
@@ -16,14 +17,20 @@ const StudentSchema = yup.object({
   address: yup.string().required("Ce champ est requis"),
   date_of_birth: yup.string().required("Ce champ est requis"),
   submission: yup.string().required("Ce champ est requis"),
-
+  phone: yup.number().typeError("Vous devez entrez un numéro téléphone valide"),
   mother_name: yup.string().required("Ce champ est requis"),
   mother_occupation: yup.string().required("Ce champ est requis"),
-  mother_phone: yup.string().required("Ce champ est requis"),
+  mother_phone: yup
+    .number()
+    .typeError("Vous devez entrez un numéro téléphone valide")
+    .required("Ce champ est requis"),
 
   father_name: yup.string().required("Ce champ est requis"),
   father_occupation: yup.string().required("Ce champ est requis"),
-  father_phone: yup.string().required("Ce champ est requis"),
+  father_phone: yup
+    .number()
+    .typeError("Vous devez entrez un numéro téléphone valide")
+    .required("Ce champ est requis"),
 
   mail: yup.string().email("Assurez-vous que le courriel est valide."),
 });
@@ -50,7 +57,6 @@ export default function FormStudent() {
   async function handleRegisterUser(newStudent: Omit<Student, "_id">) {
     try {
       const response = await addStudent(newStudent).unwrap();
-      console.log(response);
       showSnackbar(response?.message, "success"); // message, type(error, success)
     } catch (error: any) {
       if (error?.data?.message) {
@@ -226,15 +232,18 @@ export default function FormStudent() {
               error={errors.submission}
             />
           </div>
-
-          <div className="mt-5 grid grid-cols-5">
-            <button
-              type="submit"
-              className="cursor-pointer rounded-lg border border-stroke  bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
-            >
-              Enregistrer
-            </button>
-          </div>
+          {responseAddStudent.isLoading ? (
+            <Spinner />
+          ) : (
+            <div className="mt-5 grid">
+              <button
+                type="submit"
+                className="cursor-pointer rounded-lg border border-stroke  bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
+              >
+                Enregistrer
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </>
