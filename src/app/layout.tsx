@@ -5,6 +5,7 @@ import "@/css/style.css";
 import React from "react";
 import { Metadata } from "next/types";
 import Loading from "@/components/Loading/Loading";
+import { StoreProvider } from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -20,10 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true}>
-        <Loading>{children}</Loading>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body suppressHydrationWarning={true}>
+          <Loading>{children}</Loading>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
