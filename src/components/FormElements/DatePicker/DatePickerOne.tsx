@@ -8,7 +8,6 @@ const DatePickerOne = ({
   id,
   error,
   touched,
-  onChange,
 }: {
   label: string;
   value: string;
@@ -16,13 +15,12 @@ const DatePickerOne = ({
   setFieldValue?: any;
   error: any;
   touched: any;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   const [date, setDate] = useState<string>(value);
   const classNameInput =
     error && touched
-      ? `${id} form-datepicker bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm outline-none rounded focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500`
-      : `${id} form-datepicker w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary`;
+      ? `${id}  bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm outline-none rounded focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500`
+      : `${id}  w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary`;
   const classNameLabel =
     error && touched
       ? "block mb-2 text-sm font-medium text-red-700 dark:text-red-500"
@@ -53,6 +51,7 @@ const DatePickerOne = ({
           className={classNameInput}
           placeholder="mm/dd/yyyy"
           data-class="flatpickr-right"
+          id={id}
         />
 
         <div className="pointer-events-none absolute inset-0 left-auto right-5 flex items-center">

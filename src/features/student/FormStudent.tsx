@@ -6,39 +6,40 @@ import Student from "@/interface/Student";
 import Input from "@/components/Form/Input";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
-import SelectGroupOne from "@/components/SelectGroup/SelectGroupOne";
+import SelectGender from "@/components/SelectGroup/SelectGender";
 const StudentSchema = yup.object({
-  name: yup.string().required("Ce champ est requis"), //ok
-  first_name: yup.string().required("Ce champ est requis"), //ok
+  name: yup.string().required("Ce champ est requis"),
+  first_name: yup.string().required("Ce champ est requis"),
   gender: yup.string().required("Ce champ est requis"),
-  address: yup.string().required("Ce champ est requis"), //ok
-  date_of_birth: yup.string().required("Ce champ est requis"), //ok
+  address: yup.string().required("Ce champ est requis"),
+  date_of_birth: yup.string().required("Ce champ est requis"),
+  submission: yup.string().required("Ce champ est requis"),
 
-  mother_name: yup.string().required("Ce champ est requis"), //ok
-  mother_occupation: yup.string().required("Ce champ est requis"), //ok
-  mother_phone: yup.string().required("Ce champ est requis"), //ok
+  mother_name: yup.string().required("Ce champ est requis"),
+  mother_occupation: yup.string().required("Ce champ est requis"),
+  mother_phone: yup.string().required("Ce champ est requis"),
 
-  father_name: yup.string().required("Ce champ est requis"), //ok
-  father_occupation: yup.string().required("Ce champ est requis"), //ok
-  father_phone: yup.string().required("Ce champ est requis"), //ok
+  father_name: yup.string().required("Ce champ est requis"),
+  father_occupation: yup.string().required("Ce champ est requis"),
+  father_phone: yup.string().required("Ce champ est requis"),
 
   mail: yup.string().email("Assurez-vous que le courriel est valide."),
 });
 const initialValues: Omit<Student, "_id"> = {
-  name: "", //ok
-  first_name: "", //ok
-  gender: "",
-  date_of_birth: "", //ok
+  name: "",
+  first_name: "",
+  gender: "Garçon",
+  date_of_birth: new Date().toLocaleDateString(),
   classe: "",
-  address: "", //ok
-  phone: "", //ok
-  mail: "", //ok
-  mother_name: "", //ok
-  mother_occupation: "", //ok
-  mother_phone: "", //ok
-  father_name: "", //ok
-  father_occupation: "", //ok
-  father_phone: "", //ok
+  address: "",
+  phone: "",
+  mail: "",
+  mother_name: "",
+  mother_occupation: "",
+  mother_phone: "",
+  father_name: "",
+  father_occupation: "",
+  father_phone: "",
   submission: new Date().toLocaleDateString(),
 };
 export default function FormStudent() {
@@ -56,8 +57,9 @@ export default function FormStudent() {
     resetForm,
     setFieldValue,
   } = formik;
-  console.log(values.date_of_birth);
-  async function onSubmit() {}
+  async function onSubmit(value: any) {
+    console.log(value);
+  }
   return (
     <>
       <Breadcrumb pageName={"Add student"} />
@@ -91,7 +93,6 @@ export default function FormStudent() {
               setFieldValue={setFieldValue}
               touched={errors.date_of_birth}
               error={errors.date_of_birth}
-              onChange={handleChange}
             />
 
             <Input
@@ -104,17 +105,17 @@ export default function FormStudent() {
               touched={touched.address}
               placeholder="Antananarivo 101"
             />
-            <SelectGroupOne
+            <SelectGender
               label="Classe"
-              options={[""]}
               onChange={handleChange}
               value={values.classe}
+              id=""
             />
-            <SelectGroupOne
+            <SelectGender
               label="Sexe"
-              options={["Fille", "Garçon"]}
               onChange={handleChange}
               value={values.gender}
+              id="gender"
             />
             <Input
               type="text"
@@ -197,16 +198,25 @@ export default function FormStudent() {
               placeholder="Numéro téléphone du père"
             />
           </div>
-          <DatePickerOne
-            label="Date de soumission"
-            id="submission"
-            value={values.submission}
-            setFieldValue={setFieldValue}
-            touched={errors.submission}
-            error={errors.submission}
-            onChange={handleChange}
-          />
-          <button type="submit">Enregistrer</button>
+          <div className="mb-4 mt-4">
+            <DatePickerOne
+              label="Date de soumission"
+              id="submission"
+              value={values.submission}
+              setFieldValue={setFieldValue}
+              touched={errors.submission}
+              error={errors.submission}
+            />
+          </div>
+
+          <div className="mb-5">
+            <button
+              type="submit"
+              className="cursor-pointer rounded-lg border border-success bg-success px-4 py-2 text-white transition hover:bg-opacity-90"
+            >
+              Enregistrer
+            </button>
+          </div>
         </form>
       </div>
     </>

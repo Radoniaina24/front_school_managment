@@ -1,42 +1,44 @@
 "use client";
 import React, { useState } from "react";
 
-const SelectGroupOne = ({
+const SelectGender = ({
   label,
-  options,
   onChange,
   value,
+  id,
 }: {
   label: string;
-  options: Array<string>;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   value: string;
+  id: string;
 }) => {
-  const [selectedOption, setSelectedOption] = useState<string>("");
-  function handleChange(e: any) {
-    console.log(e.target.value);
-  }
   return (
     <div className="mb-1">
       <label className="mb-2.5 block text-black dark:text-white">{label}</label>
 
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
+          id={id}
           value={value}
-          onChange={handleChange}
+          onChange={onChange}
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-2 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary `}
         >
-          {options.map((item, index) => (
-            <option
-              key={index}
-              value={item}
-              className="text-body dark:text-bodydark"
-            >
-              {item}
-            </option>
-          ))}
+          <option
+            key={"garçon"}
+            value={"Garçon"}
+            className="text-body dark:text-bodydark"
+          >
+            Garçon
+          </option>
+          <option
+            key={"fille"}
+            value={"Fille"}
+            className="text-body dark:text-bodydark"
+          >
+            Fille
+          </option>
         </select>
-
         <span className="absolute right-4 top-1/2 z-30 -translate-y-1/2">
           <svg
             className="fill-current"
@@ -61,4 +63,4 @@ const SelectGroupOne = ({
   );
 };
 
-export default SelectGroupOne;
+export default SelectGender;

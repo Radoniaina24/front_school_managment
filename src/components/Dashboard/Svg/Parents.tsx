@@ -20,9 +20,9 @@ export default function Parents_Svg() {
         y2="60.23"
         gradientTransform="matrix(1 0 0 -1 0 128)"
       >
-        <stop offset="0" stop-color="#4d7d23"></stop>
+        <stop offset="0" stopColor="#4d7d23"></stop>
 
-        <stop offset="1" stop-color="#67b730"></stop>
+        <stop offset="1" stopColor="#67b730"></stop>
       </linearGradient>
 
       <path
@@ -43,9 +43,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(1 0 0 -.4912 -92.695 56.67)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".728" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".728" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -61,9 +61,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(-.9057 .4238 .3144 .6719 154.919 -41.21)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".663" stop-color="#6d4c41"></stop>
+        <stop offset=".663" stopColor="#6d4c41"></stop>
 
-        <stop offset="1" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset="1" stopColor="#6d4c41" stopOpacity="0"></stop>
       </radialGradient>
 
       <path
@@ -79,9 +79,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(-.0746 -.9972 -.8311 .0622 78.222 159.159)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".725" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".725" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -97,9 +97,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(.0746 -.9972 .8311 .0622 2.562 54.157)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".725" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".725" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -115,9 +115,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(-1 0 0 -.4912 60.327 56.67)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".728" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".728" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -133,9 +133,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(.9057 .4238 -.3144 .6719 13.378 3.416)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".663" stop-color="#6d4c41"></stop>
+        <stop offset=".663" stopColor="#6d4c41"></stop>
 
-        <stop offset="1" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset="1" stopColor="#6d4c41" stopOpacity="0"></stop>
       </radialGradient>
 
       <path
@@ -157,9 +157,9 @@ export default function Parents_Svg() {
         y2="30.521"
         gradientTransform="matrix(1 0 0 -1 0 128)"
       >
-        <stop offset=".604" stop-color="#ffca28"></stop>
+        <stop offset=".604" stopColor="#ffca28"></stop>
 
-        <stop offset="1" stop-color="#ffb300"></stop>
+        <stop offset="1" stopColor="#ffb300"></stop>
       </linearGradient>
 
       <path
@@ -212,9 +212,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(.3076 .9515 -.706 .2282 45.534 -25.818)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".699" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".699" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -230,9 +230,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(.8813 .4726 -.5603 1.045 5.881 -14.007)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".58" stop-color="#6d4c41"></stop>
+        <stop offset=".58" stopColor="#6d4c41"></stop>
 
-        <stop offset="1" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset="1" stopColor="#6d4c41" stopOpacity="0"></stop>
       </radialGradient>
 
       <path
@@ -248,9 +248,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(-.9378 -.3944 .2182 -.5285 170.255 126.553)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".699" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".699" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -266,9 +266,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(1 0 0 1.2233 0 -1.784)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".702" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".702" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -284,9 +284,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(-.9657 -.2598 .2432 -.9037 49.732 34.705)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".66" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".66" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -302,9 +302,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(.9907 .1363 -.1915 1.3921 4.307 -11.8)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".598" stop-color="#6d4c41" stop-opacity="0"></stop>
+        <stop offset=".598" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#6d4c41"></stop>
+        <stop offset="1" stopColor="#6d4c41"></stop>
       </radialGradient>
 
       <path
@@ -322,11 +322,11 @@ export default function Parents_Svg() {
           y2="5.917"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset=".366" stop-color="#f78c1f"></stop>
+          <stop offset=".366" stopColor="#f78c1f"></stop>
 
-          <stop offset=".672" stop-color="#f47f12"></stop>
+          <stop offset=".672" stopColor="#f47f12"></stop>
 
-          <stop offset="1" stop-color="#ef6c00"></stop>
+          <stop offset="1" stopColor="#ef6c00"></stop>
         </linearGradient>
 
         <path
@@ -349,9 +349,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(1 0 0 -.4912 -92.695 56.67)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".728" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".728" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -367,9 +367,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(-.9057 .4238 .3144 .6719 154.919 -41.21)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".663" stop-color="#6d4c41"></stop>
+          <stop offset=".663" stopColor="#6d4c41"></stop>
 
-          <stop offset="1" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset="1" stopColor="#6d4c41" stopOpacity="0"></stop>
         </radialGradient>
 
         <path
@@ -385,9 +385,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(-.0746 -.9972 -.8311 .0622 78.222 159.159)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".725" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".725" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -403,9 +403,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(.0746 -.9972 .8311 .0622 2.562 54.157)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".725" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".725" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -421,9 +421,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(-1 0 0 -.4912 60.327 56.67)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".728" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".728" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -439,9 +439,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(.9057 .4238 -.3144 .6719 13.378 3.416)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".663" stop-color="#6d4c41"></stop>
+          <stop offset=".663" stopColor="#6d4c41"></stop>
 
-          <stop offset="1" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset="1" stopColor="#6d4c41" stopOpacity="0"></stop>
         </radialGradient>
 
         <path
@@ -505,9 +505,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(.3076 .9515 -.706 .2282 45.534 -25.818)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".699" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".699" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -523,9 +523,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(.8813 .4726 -.5603 1.045 5.881 -14.007)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".58" stop-color="#6d4c41"></stop>
+          <stop offset=".58" stopColor="#6d4c41"></stop>
 
-          <stop offset="1" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset="1" stopColor="#6d4c41" stopOpacity="0"></stop>
         </radialGradient>
 
         <path
@@ -541,9 +541,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(-.9378 -.3944 .2182 -.5285 170.255 126.553)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".699" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".699" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -559,9 +559,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(1 0 0 1.2233 0 -1.784)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".702" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".702" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -577,9 +577,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(-.9657 -.2598 .2432 -.9037 49.732 34.705)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".66" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".66" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -595,9 +595,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(.9907 .1363 -.1915 1.3921 4.307 -11.8)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".598" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".598" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -614,9 +614,9 @@ export default function Parents_Svg() {
         gradientTransform="matrix(1 0 0 -1.4568 0 143.084)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".594" stop-color="#212121"></stop>
+        <stop offset=".594" stopColor="#212121"></stop>
 
-        <stop offset="1" stop-color="#616161" stop-opacity=".05"></stop>
+        <stop offset="1" stopColor="#616161" stopOpacity=".05"></stop>
       </radialGradient>
 
       <path
@@ -634,9 +634,9 @@ export default function Parents_Svg() {
           x2="63.999"
           y2="123.431"
         >
-          <stop offset=".313" stop-color="#a900fe"></stop>
+          <stop offset=".313" stopColor="#a900fe"></stop>
 
-          <stop offset="1" stop-color="#9000d9"></stop>
+          <stop offset="1" stopColor="#9000d9"></stop>
         </linearGradient>
 
         <path
@@ -700,9 +700,9 @@ export default function Parents_Svg() {
           gradientTransform="matrix(0 1.1138 -.9718 0 96.246 67.636)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".794" stop-color="#6d4c41" stop-opacity="0"></stop>
+          <stop offset=".794" stopColor="#6d4c41" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#6d4c41"></stop>
+          <stop offset="1" stopColor="#6d4c41"></stop>
         </radialGradient>
 
         <path
@@ -721,9 +721,9 @@ export default function Parents_Svg() {
           y2="30.521"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset=".604" stop-color="#ffca28"></stop>
+          <stop offset=".604" stopColor="#ffca28"></stop>
 
-          <stop offset="1" stop-color="#ffb300"></stop>
+          <stop offset="1" stopColor="#ffb300"></stop>
         </linearGradient>
 
         <path

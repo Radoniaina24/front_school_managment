@@ -20,9 +20,9 @@ export default function Teachers_Svg() {
         y2="39.511"
         gradientTransform="matrix(1 0 0 -1 0 128)"
       >
-        <stop offset="0" stop-color="#26a69a"></stop>
+        <stop offset="0" stopColor="#26a69a"></stop>
 
-        <stop offset="1" stop-color="#00796b"></stop>
+        <stop offset="1" stopColor="#00796b"></stop>
       </linearGradient>
 
       <path
@@ -39,9 +39,9 @@ export default function Teachers_Svg() {
         y2="37.224"
         gradientTransform="matrix(1 0 0 -1 0 128)"
       >
-        <stop offset="0" stop-color="#8d6e63"></stop>
+        <stop offset="0" stopColor="#8d6e63"></stop>
 
-        <stop offset=".779" stop-color="#795548"></stop>
+        <stop offset=".779" stopColor="#795548"></stop>
       </linearGradient>
 
       <path
@@ -62,9 +62,9 @@ export default function Teachers_Svg() {
         gradientTransform="matrix(1 0 0 .4912 -21.055 59.629)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".728" stop-color="#bfa055" stop-opacity="0"></stop>
+        <stop offset=".728" stopColor="#bfa055" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#bfa055"></stop>
+        <stop offset="1" stopColor="#bfa055"></stop>
       </radialGradient>
 
       <path
@@ -80,9 +80,9 @@ export default function Teachers_Svg() {
         gradientTransform="matrix(-.9057 .4238 -.3144 -.6719 186.513 79.36)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".663" stop-color="#bfa055"></stop>
+        <stop offset=".663" stopColor="#bfa055"></stop>
 
-        <stop offset="1" stop-color="#bfa055" stop-opacity="0"></stop>
+        <stop offset="1" stopColor="#bfa055" stopOpacity="0"></stop>
       </radialGradient>
 
       <path
@@ -98,9 +98,9 @@ export default function Teachers_Svg() {
         gradientTransform="matrix(-.0746 -.9972 .8311 -.0622 33.494 157.622)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".725" stop-color="#bfa055" stop-opacity="0"></stop>
+        <stop offset=".725" stopColor="#bfa055" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#bfa055"></stop>
+        <stop offset="1" stopColor="#bfa055"></stop>
       </radialGradient>
 
       <path
@@ -116,9 +116,9 @@ export default function Teachers_Svg() {
         gradientTransform="matrix(.0746 -.9972 -.8311 -.0622 98.274 107.563)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".725" stop-color="#bfa055" stop-opacity="0"></stop>
+        <stop offset=".725" stopColor="#bfa055" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#bfa055"></stop>
+        <stop offset="1" stopColor="#bfa055"></stop>
       </radialGradient>
 
       <path
@@ -134,9 +134,9 @@ export default function Teachers_Svg() {
         gradientTransform="matrix(-1 0 0 .4912 98.878 59.629)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".728" stop-color="#bfa055" stop-opacity="0"></stop>
+        <stop offset=".728" stopColor="#bfa055" stopOpacity="0"></stop>
 
-        <stop offset="1" stop-color="#bfa055"></stop>
+        <stop offset="1" stopColor="#bfa055"></stop>
       </radialGradient>
 
       <path
@@ -152,9 +152,9 @@ export default function Teachers_Svg() {
         gradientTransform="matrix(.9057 .4238 .3144 -.6719 -13.024 100.635)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".663" stop-color="#bfa055"></stop>
+        <stop offset=".663" stopColor="#bfa055"></stop>
 
-        <stop offset="1" stop-color="#bfa055" stop-opacity="0"></stop>
+        <stop offset="1" stopColor="#bfa055" stopOpacity="0"></stop>
       </radialGradient>
 
       <path
@@ -171,9 +171,9 @@ export default function Teachers_Svg() {
         y2="10.938"
         gradientTransform="matrix(1 0 0 -1 0 128)"
       >
-        <stop offset="0" stop-color="#e1f5fe"></stop>
+        <stop offset="0" stopColor="#e1f5fe"></stop>
 
-        <stop offset="1" stop-color="#81d4fa"></stop>
+        <stop offset="1" stopColor="#81d4fa"></stop>
       </linearGradient>
 
       <path
@@ -198,13 +198,13 @@ export default function Teachers_Svg() {
           y2="4.97"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset="0" stop-color="#ffa000"></stop>
+          <stop offset="0" stopColor="#ffa000"></stop>
 
-          <stop offset=".341" stop-color="#ff9300"></stop>
+          <stop offset=".341" stopColor="#ff9300"></stop>
 
-          <stop offset=".972" stop-color="#ff7100"></stop>
+          <stop offset=".972" stopColor="#ff7100"></stop>
 
-          <stop offset="1" stop-color="#ff6f00"></stop>
+          <stop offset="1" stopColor="#ff6f00"></stop>
         </linearGradient>
 
         <path
@@ -221,13 +221,13 @@ export default function Teachers_Svg() {
           y2="4.807"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset="0" stop-color="#ffa000"></stop>
+          <stop offset="0" stopColor="#ffa000"></stop>
 
-          <stop offset=".341" stop-color="#ff9300"></stop>
+          <stop offset=".341" stopColor="#ff9300"></stop>
 
-          <stop offset=".972" stop-color="#ff7100"></stop>
+          <stop offset=".972" stopColor="#ff7100"></stop>
 
-          <stop offset="1" stop-color="#ff6f00"></stop>
+          <stop offset="1" stopColor="#ff6f00"></stop>
         </linearGradient>
 
         <path
@@ -302,8 +302,8 @@ export default function Teachers_Svg() {
         d="M93.83 52.93c-.07-1.19-.12-1.31-1.69-1.81c-1.23-.39-7.95-.94-13.01-.66c-.36.02-.71.04-1.04.07c-4.59.39-10.1 2.24-14.24 2.34c-1.76.04-9.01-1.86-14.14-2.26c-.33-.02-.66-.05-1-.06c-5.07-.26-11.82.33-13.05.73c-1.57.51-1.62.63-1.68 1.82c-.07 1.19.13 2.2 1.06 2.51c1.27.42 1.28 2 2.13 6.54c.77 4.14 2.62 7.41 10.57 7.98c.34.02.66.04.98.04c7.03.1 9.45-4.53 10.25-6.07c1.49-2.86 1.02-6.8 4.96-6.81c3.93-.01 3.56 3.86 5.07 6.71c.81 1.53 3.17 6.18 10.14 6.08c.34 0 .69-.02 1.05-.05c7.94-.62 9.78-3.9 10.52-8.04c.82-4.55.83-6.14 2.09-6.56c.91-.3 1.11-1.31 1.03-2.5zM53.28 68.17c-1.22.57-2.85.86-4.57.86c-3.59-.01-7.57-1.27-9.01-3.81c-2.04-3.62-2.57-10.94.03-12.47c1.14-.67 4.99-1.13 8.97-.96c4.13.18 8.4 1.04 9.94 3.06c2.55 3.33-1.5 11.5-5.36 13.32zm34.9-3.1c-1.43 2.56-5.44 3.85-9.05 3.86c-1.7.01-3.31-.27-4.51-.83c-3.87-1.8-7.97-9.94-5.45-13.29c1.53-2.04 5.82-2.92 9.96-3.12c3.97-.19 7.81.25 8.94.91c2.61 1.52 2.13 8.84.11 12.47z"
         fill="#212121"
         stroke="#212121"
-        stroke-width=".55"
-        stroke-miterlimit="10"
+        strokeWidth=".55"
+        strokeMiterlimit="10"
       ></path>
 
       <g>
@@ -316,9 +316,9 @@ export default function Teachers_Svg() {
           y2="11.668"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset=".002" stop-color="#212121" stop-opacity=".2"></stop>
+          <stop offset=".002" stopColor="#212121" stopOpacity=".2"></stop>
 
-          <stop offset="1" stop-color="#212121" stop-opacity=".6"></stop>
+          <stop offset="1" stopColor="#212121" stopOpacity=".6"></stop>
         </linearGradient>
 
         <path
@@ -341,9 +341,9 @@ export default function Teachers_Svg() {
           y2="10.486"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset="0" stop-color="#ef5350"></stop>
+          <stop offset="0" stopColor="#ef5350"></stop>
 
-          <stop offset="1" stop-color="#e53935"></stop>
+          <stop offset="1" stopColor="#e53935"></stop>
         </linearGradient>
 
         <path
@@ -360,9 +360,9 @@ export default function Teachers_Svg() {
           y2="24.969"
           gradientTransform="matrix(1 0 0 -1 0 128)"
         >
-          <stop offset="0" stop-color="#212121"></stop>
+          <stop offset="0" stopColor="#212121"></stop>
 
-          <stop offset="1" stop-color="#424242"></stop>
+          <stop offset="1" stopColor="#424242"></stop>
         </linearGradient>
 
         <path
@@ -385,9 +385,9 @@ export default function Teachers_Svg() {
           y2="-972.312"
           gradientTransform="matrix(.9612 .2758 -.3192 1.1123 -136.555 1216.41)"
         >
-          <stop offset=".01" stop-color="#bdbdbd"></stop>
+          <stop offset=".01" stopColor="#bdbdbd"></stop>
 
-          <stop offset=".987" stop-color="#f8f8f7"></stop>
+          <stop offset=".987" stopColor="#f8f8f7"></stop>
         </linearGradient>
 
         <path
@@ -410,9 +410,9 @@ export default function Teachers_Svg() {
           gradientTransform="matrix(.3076 .9515 .706 -.2282 -3.184 -15.605)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".699" stop-color="#bfa055" stop-opacity="0"></stop>
+          <stop offset=".699" stopColor="#bfa055" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#bfa055"></stop>
+          <stop offset="1" stopColor="#bfa055"></stop>
         </radialGradient>
 
         <path
@@ -428,9 +428,9 @@ export default function Teachers_Svg() {
           gradientTransform="matrix(.8813 .4726 .5603 -1.045 -63.752 111.228)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".58" stop-color="#bfa055"></stop>
+          <stop offset=".58" stopColor="#bfa055"></stop>
 
-          <stop offset="1" stop-color="#bfa055" stop-opacity="0"></stop>
+          <stop offset="1" stopColor="#bfa055" stopOpacity="0"></stop>
         </radialGradient>
 
         <path
@@ -446,9 +446,9 @@ export default function Teachers_Svg() {
           gradientTransform="matrix(-.9378 -.3944 -.2182 .5285 231.04 50.678)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".699" stop-color="#bfa055" stop-opacity="0"></stop>
+          <stop offset=".699" stopColor="#bfa055" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#bfa055"></stop>
+          <stop offset="1" stopColor="#bfa055"></stop>
         </radialGradient>
 
         <path
@@ -464,9 +464,9 @@ export default function Teachers_Svg() {
           gradientTransform="matrix(1 0 0 -1.2233 0 153.742)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".702" stop-color="#bfa055" stop-opacity="0"></stop>
+          <stop offset=".702" stopColor="#bfa055" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#bfa055"></stop>
+          <stop offset="1" stopColor="#bfa055"></stop>
         </radialGradient>
 
         <path
@@ -482,9 +482,9 @@ export default function Teachers_Svg() {
           gradientTransform="matrix(-.9657 -.2598 -.2432 .9037 107.598 -51.632)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".66" stop-color="#bfa055" stop-opacity="0"></stop>
+          <stop offset=".66" stopColor="#bfa055" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#bfa055"></stop>
+          <stop offset="1" stopColor="#bfa055"></stop>
         </radialGradient>
 
         <path
@@ -500,9 +500,9 @@ export default function Teachers_Svg() {
           gradientTransform="matrix(.9907 .1363 .1915 -1.3921 -15.841 155.923)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".598" stop-color="#bfa055" stop-opacity="0"></stop>
+          <stop offset=".598" stopColor="#bfa055" stopOpacity="0"></stop>
 
-          <stop offset="1" stop-color="#bfa055"></stop>
+          <stop offset="1" stopColor="#bfa055"></stop>
         </radialGradient>
 
         <path
