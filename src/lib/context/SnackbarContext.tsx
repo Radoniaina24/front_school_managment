@@ -9,7 +9,7 @@ interface SnackbarContextType {
   showSnackbar: (message: string, type?: typeNotification) => void;
 }
 const SnackbarContext = createContext<SnackbarContextType | undefined>(
-  undefined
+  undefined,
 );
 interface SnackbarProviderProps {
   children: ReactNode;
@@ -28,7 +28,7 @@ const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) => {
 
   const showSnackbar = (
     message: string,
-    type: typeNotification = "success"
+    type: typeNotification = "success",
   ) => {
     setSnackbar({ open: true, message, type });
   };

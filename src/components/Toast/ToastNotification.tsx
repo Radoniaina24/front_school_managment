@@ -21,10 +21,10 @@ export function ToastNotification({
 
   if (type === "error") {
     return (
-      <Toast className="fixed bg-red-100 p-2 bottom-4 left-4">
-        <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+      <Toast className=" fixed right-4 top-4 z-99999 w-80 bg-red-100 p-2">
+        <div className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-500 dark:bg-red-800 dark:text-red-200">
           <svg
-            className="w-5 h-5"
+            className="h-5 w-5"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -37,16 +37,16 @@ export function ToastNotification({
         <div className="ms-3 text-sm font-normal">{message}</div>
         <Toast.Toggle
           onClick={onClose}
-          className="  ms-auto -mx-1.5 -my-1.5 bg-red-100 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-100 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700 "
+          className="  -mx-1.5 -my-1.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-red-100 p-1.5 text-red-500 hover:bg-red-100 focus:ring-2 focus:ring-red-400 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700 "
         />
       </Toast>
     );
   }
   return (
-    <Toast className="fixed bg-green-100 p-2 bottom-4 left-4">
-      <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+    <Toast className="fixed right-4 top-4 z-99999 w-80 bg-green-100 p-2">
+      <div className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
         <svg
-          className="w-5 h-5"
+          className="h-5 w-5"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -59,7 +59,7 @@ export function ToastNotification({
       <div className="ms-3 text-sm font-normal">{message}</div>
       <Toast.Toggle
         onClick={onClose}
-        className="ms-auto -mx-1.5 -my-1.5 bg-green-100 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-100 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 "
+        className="-mx-1.5 -my-1.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-green-100 p-1.5 text-green-500 hover:bg-green-100 focus:ring-2 focus:ring-green-400 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700 "
       />
     </Toast>
   );

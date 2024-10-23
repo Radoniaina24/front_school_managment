@@ -8,6 +8,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
 import SelectGender from "@/components/SelectGroup/SelectGender";
 import { useAddStudentMutation } from "@/lib/api/studentApi";
+import { useSnackbar } from "@/lib/context/SnackbarContext";
 const StudentSchema = yup.object({
   name: yup.string().required("Ce champ est requis"),
   first_name: yup.string().required("Ce champ est requis"),
@@ -31,7 +32,7 @@ const initialValues: Omit<Student, "_id"> = {
   first_name: "",
   gender: "Garçon",
   date_of_birth: new Date().toLocaleDateString(),
-  classe: "",
+  classe: "Terminale C",
   address: "",
   phone: "",
   mail: "",
@@ -44,14 +45,19 @@ const initialValues: Omit<Student, "_id"> = {
   submission: new Date().toLocaleDateString(),
 };
 export default function FormStudent() {
+  const { showSnackbar } = useSnackbar();
   const [addStudent, responseAddStudent] = useAddStudentMutation();
   async function handleRegisterUser(newStudent: Omit<Student, "_id">) {
     try {
       const response = await addStudent(newStudent).unwrap();
       console.log(response);
-      // showSnackbar(response?.message, "success"); // message, type(error, success)
+      showSnackbar(response?.message, "success"); // message, type(error, success)
     } catch (error: any) {
-      // showSnackbar(error?.data?.message, "error");
+      if (error?.data?.message) {
+        showSnackbar(error?.data?.message, "error");
+      } else {
+        showSnackbar("Verifier votre connexion internet", "error");
+      }
     }
   }
   const formik = useFormik({
@@ -118,10 +124,10 @@ export default function FormStudent() {
               placeholder="Antananarivo 101"
             />
             <SelectGender
-              label="Classe"
+              label="Sexe"
               onChange={handleChange}
-              value={values.classe}
-              id=""
+              value={values.gender}
+              id="gender"
             />
             <SelectGender
               label="Sexe"
@@ -224,7 +230,7 @@ export default function FormStudent() {
           <div className="mt-5 grid grid-cols-5">
             <button
               type="submit"
-              className="cursor-pointer rounded-lg border border-success bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90"
+              className="cursor-pointer rounded-lg border border-stroke  bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
             >
               Enregistrer
             </button>
