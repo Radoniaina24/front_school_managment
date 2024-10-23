@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import flowbite from "flowbite-react/tailwind";
 import defaultTheme from "tailwindcss/defaultTheme";
 const colors = require("tailwindcss/colors");
 
@@ -342,6 +343,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [flowbite.plugin()],
 };
 export default config;

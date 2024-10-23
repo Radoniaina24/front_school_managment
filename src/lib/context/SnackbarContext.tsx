@@ -1,16 +1,16 @@
 "use client";
-import React, { createContext, useState, useContext, ReactNode } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import {
+  ToastNotification,
+  typeNotification,
+} from "@/components/Toast/ToastNotification";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 interface SnackbarContextType {
-  showSnackbar: (message: string, severity?: AlertProps["severity"]) => void;
+  showSnackbar: (message: string, type?: typeNotification) => void;
 }
-
 const SnackbarContext = createContext<SnackbarContextType | undefined>(
   undefined
 );
-
 interface SnackbarProviderProps {
   children: ReactNode;
 }
@@ -19,47 +19,41 @@ const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) => {
   const [snackbar, setSnackbar] = useState<{
     open: boolean;
     message: string;
-    severity: AlertProps["severity"];
+    type: typeNotification; // error | success
   }>({
-    open: false,
     message: "",
-    severity: "info",
+    open: false,
+    type: "success",
   });
 
   const showSnackbar = (
     message: string,
-    severity: AlertProps["severity"] = "info"
+    type: typeNotification = "success"
   ) => {
-    setSnackbar({ open: true, message, severity });
+    setSnackbar({ open: true, message, type });
   };
-
   const handleClose = () => {
-    setSnackbar({ ...snackbar, open: false });
+    setSnackbar({ open: false, message: "", type: "success" });
   };
   return (
     <SnackbarContext.Provider value={{ showSnackbar }}>
       {children}
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-      >
-        <MuiAlert
+      {snackbar.open && (
+        <ToastNotification
+          message={snackbar.message}
+          type={snackbar.type}
+          autoHideDuration={6000}
           onClose={handleClose}
-          severity={snackbar.severity}
-          sx={{ width: "100%" }}
-        >
-          {snackbar.message}
-        </MuiAlert>
-      </Snackbar>
+        />
+      )}
     </SnackbarContext.Provider>
   );
 };
-export const useSnackbar = (): SnackbarContextType => {
+export function useSnackbar(): SnackbarContextType {
   const context = useContext(SnackbarContext);
   if (!context) {
     throw new Error("useSnackbar must be used within a SnackbarProvider");
   }
   return context;
-};
+}
 export default SnackbarProvider;

@@ -7,6 +7,7 @@ import Input from "@/components/Form/Input";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
 import SelectGender from "@/components/SelectGroup/SelectGender";
+import { useAddStudentMutation } from "@/lib/api/studentApi";
 const StudentSchema = yup.object({
   name: yup.string().required("Ce champ est requis"),
   first_name: yup.string().required("Ce champ est requis"),
@@ -43,6 +44,16 @@ const initialValues: Omit<Student, "_id"> = {
   submission: new Date().toLocaleDateString(),
 };
 export default function FormStudent() {
+  const [addStudent, responseAddStudent] = useAddStudentMutation();
+  async function handleRegisterUser(newStudent: Omit<Student, "_id">) {
+    try {
+      const response = await addStudent(newStudent).unwrap();
+      console.log(response);
+      // showSnackbar(response?.message, "success"); // message, type(error, success)
+    } catch (error: any) {
+      // showSnackbar(error?.data?.message, "error");
+    }
+  }
   const formik = useFormik({
     initialValues,
     validationSchema: StudentSchema,
@@ -57,7 +68,8 @@ export default function FormStudent() {
     resetForm,
     setFieldValue,
   } = formik;
-  async function onSubmit(value: any) {
+  async function onSubmit(value: Omit<Student, "_id">) {
+    handleRegisterUser(value);
     console.log(value);
   }
   return (
