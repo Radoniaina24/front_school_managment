@@ -209,10 +209,10 @@ export default function FormStudent() {
             />
           </div>
 
-          <div className="mb-5">
+          <div className="mt-5 grid grid-cols-5">
             <button
               type="submit"
-              className="cursor-pointer rounded-lg border border-success bg-success px-4 py-2 text-white transition hover:bg-opacity-90"
+              className="cursor-pointer rounded-lg border border-success bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90"
             >
               Enregistrer
             </button>
