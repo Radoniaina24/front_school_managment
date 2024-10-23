@@ -2,12 +2,7 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { counterSlice } from "./features/counter/counterSlice";
 import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
-import { permissionAPI } from "./api/permissionApi";
-import { holidayAPI } from "./api/holidayApi";
-import { otherAPI } from "./api/otherApi";
-import { mailAPI } from "./api/mailApi";
-import { requestAPI } from "./api/requestApi";
-import { requestPermissionAPI } from "./api/requestPermissionApi";
+import { studentAPI } from "./api/studentApi";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -22,24 +17,12 @@ export type RootState = ReturnType<typeof rootReducer>;
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      [permissionAPI.reducerPath]: permissionAPI.reducer,
-      [holidayAPI.reducerPath]: holidayAPI.reducer,
-      [otherAPI.reducerPath]: otherAPI.reducer,
-      [mailAPI.reducerPath]: mailAPI.reducer,
-      [requestAPI.reducerPath]: requestAPI.reducer,
-      [requestPermissionAPI.reducerPath]: requestPermissionAPI.reducer,
+      [studentAPI.reducerPath]: studentAPI.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
     middleware: (getDefaultMiddleware) => {
-      return getDefaultMiddleware().concat(
-        permissionAPI.middleware,
-        holidayAPI.middleware,
-        otherAPI.middleware,
-        mailAPI.middleware,
-        requestAPI.middleware,
-        requestPermissionAPI.middleware
-      );
+      return getDefaultMiddleware().concat(studentAPI.middleware);
     },
   });
 };
