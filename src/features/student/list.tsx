@@ -9,6 +9,7 @@ import Edit from "./svg/edit";
 import SearchBar from "./search";
 import Limit from "./limit";
 import ListItem from "./listItem";
+import Link from "next/link";
 
 export default function ListStudent() {
   const [search, setSearch] = useState<string>("");
@@ -19,6 +20,12 @@ export default function ListStudent() {
     <div>
       <Breadcrumb pageName={"List students"} />
       <div className="rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
+        <button
+          type="submit"
+          className="mb-3 cursor-pointer rounded border  border-stroke bg-primary px-4 py-1 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
+        >
+          <Link href="/student/add">Ajouter</Link>
+        </button>
         <div className="flex flex-wrap items-center justify-between">
           <SearchBar query={search} onQuery={setSearch} />
           <Limit setLimit={setLimit} limit={limit} />

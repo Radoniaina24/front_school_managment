@@ -10,6 +10,9 @@ import SelectGender from "@/components/SelectGroup/SelectGender";
 import { useAddStudentMutation } from "@/lib/api/studentApi";
 import { useSnackbar } from "@/lib/context/SnackbarContext";
 import Spinner from "@/components/spinner/Spinner";
+import { useRouter } from "next/navigation";
+import SelectClasse from "./selectedClasse";
+import { error } from "console";
 const StudentSchema = yup.object({
   name: yup.string().required("Ce champ est requis"),
   first_name: yup.string().required("Ce champ est requis"),
@@ -33,13 +36,14 @@ const StudentSchema = yup.object({
     .required("Ce champ est requis"),
 
   mail: yup.string().email("Assurez-vous que le courriel est valide."),
+  classe: yup.string().required("Ce champ est requis"),
 });
 const initialValues: Omit<Student, "_id"> = {
   name: "",
   first_name: "",
   gender: "Garçon",
   date_of_birth: new Date().toLocaleDateString(),
-  classe: ["Terminale C"],
+  classe: "",
   address: "",
   phone: "",
   mail: "",
@@ -52,12 +56,14 @@ const initialValues: Omit<Student, "_id"> = {
   submission: new Date().toLocaleDateString(),
 };
 export default function FormStudent() {
+  const navigation = useRouter();
   const { showSnackbar } = useSnackbar();
   const [addStudent, responseAddStudent] = useAddStudentMutation();
   async function handleRegisterUser(newStudent: Omit<Student, "_id">) {
     try {
       const response = await addStudent(newStudent).unwrap();
       showSnackbar(response?.message, "success"); // message, type(error, success)
+      navigation.push("/student");
     } catch (error: any) {
       if (error?.data?.message) {
         showSnackbar(error?.data?.message, "error");
@@ -82,8 +88,9 @@ export default function FormStudent() {
   } = formik;
   async function onSubmit(value: Omit<Student, "_id">) {
     handleRegisterUser(value);
-    console.log(value);
+    resetForm();
   }
+  console.log(errors);
   return (
     <>
       <Breadcrumb pageName={"Add student"} />
@@ -129,11 +136,13 @@ export default function FormStudent() {
               touched={touched.address}
               placeholder="Antananarivo 101"
             />
-            <SelectGender
-              label="Sexe"
+            <SelectClasse
+              label="Classe"
               onChange={handleChange}
-              value={values.gender}
-              id="gender"
+              value={values.classe}
+              error={errors.classe}
+              touched={touched.classe}
+              id="classe"
             />
             <SelectGender
               label="Sexe"

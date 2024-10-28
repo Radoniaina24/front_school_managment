@@ -4,7 +4,7 @@ export default interface Student {
   first_name: string;
   gender: string;
   date_of_birth: string;
-  classe: Array<any>;
+  classe: any;
   address: string;
   phone: string;
   mail: string;

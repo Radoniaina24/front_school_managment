@@ -40,7 +40,7 @@ export default function SearchBar({
 
       <input
         type="text"
-        placeholder="Type to search..."
+        placeholder="Recherche..."
         className="appearance-none rounded border border-stroke bg-transparent px-10 py-2 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary  "
         value={query}
         onChange={handleChange}
