@@ -39,7 +39,7 @@ const initialValues: Omit<Student, "_id"> = {
   first_name: "",
   gender: "Garçon",
   date_of_birth: new Date().toLocaleDateString(),
-  classe: "Terminale C",
+  classe: ["Terminale C"],
   address: "",
   phone: "",
   mail: "",

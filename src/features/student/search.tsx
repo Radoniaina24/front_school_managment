@@ -1,6 +1,17 @@
-import React from "react";
+import { on } from "events";
+import React, { useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({
+  query,
+  onQuery,
+}: {
+  query: string;
+  onQuery: any;
+}) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    onQuery(e.target.value);
+  }
+
   return (
     <div className="relative mb-5">
       <button className="absolute left-2 top-1/2 -translate-y-1/2">
@@ -30,7 +41,9 @@ export default function SearchBar() {
       <input
         type="text"
         placeholder="Type to search..."
-        className=" rounded bg-transparent pl-9 pr-4 font-medium focus:outline-none "
+        className="appearance-none rounded border border-stroke bg-transparent px-10 py-2 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary  "
+        value={query}
+        onChange={handleChange}
       />
     </div>
   );

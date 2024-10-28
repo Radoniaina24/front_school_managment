@@ -19,10 +19,11 @@ export const studentAPI = createApi({
       providesTags: ["student"],
     }),
     getAllStudent: builder.query({
-      query: () => {
+      query: (params) => {
         return {
           url: `student`,
           method: "GET",
+          params,
         };
       },
       providesTags: ["student"],
