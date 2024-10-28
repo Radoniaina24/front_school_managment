@@ -5,6 +5,7 @@ import Delete from "./svg/delete";
 import Edit from "./svg/edit";
 import { useDeleteStudentMutation } from "@/lib/api/studentApi";
 import { useSnackbar } from "@/lib/context/SnackbarContext";
+import Classe from "@/interface/Classe";
 
 export default function ListItem({ student }: { student: Student }) {
   const [deleteStudent, responseDeleteStudent] = useDeleteStudentMutation();
@@ -30,7 +31,7 @@ export default function ListItem({ student }: { student: Student }) {
       </td>
       <td className="border-b border-[#eee] px-6 py-4 dark:border-strokedark">
         {student?.classe?.length > 0
-          ? student.classe.map((item) => item.level)
+          ? student.classe.map((item: Classe) => item.level)
           : "-"}
       </td>
       <td className=" border-b border-[#eee] px-4 py-5 dark:border-strokedark">
