@@ -13,7 +13,7 @@ export default function SearchBar({
   }
 
   return (
-    <div className="relative mb-5">
+    <div className="relative">
       <button className="absolute left-2 top-1/2 -translate-y-1/2">
         <svg
           className="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary"

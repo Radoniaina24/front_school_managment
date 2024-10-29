@@ -3,19 +3,23 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Student from "@/interface/Student";
 import { useGetStudentQuery } from "@/lib/api/studentApi";
 import React, { useState } from "react";
-import ViewStudent from "./svg/view";
-import Delete from "./svg/delete";
-import Edit from "./svg/edit";
 import SearchBar from "./search";
 import Limit from "./limit";
 import ListItem from "./listItem";
 import Link from "next/link";
+import Pagination from "./Pagination";
 
 export default function ListStudent() {
   const [search, setSearch] = useState<string>("");
-  const [limit, setLimit] = useState<number>(10);
-  const { data, isLoading, error } = useGetStudentQuery({ search, limit });
+  const [limit, setLimit] = useState<number>(2);
+  const [page, setPage] = useState<number>(1);
+  const { data, isLoading, error } = useGetStudentQuery({
+    search,
+    limit,
+    page,
+  });
   const students = data?.students;
+  const totalePages = data?.totalPages;
   return (
     <div>
       <Breadcrumb pageName={"List students"} />
@@ -26,7 +30,7 @@ export default function ListStudent() {
         >
           <Link href="/student/add">Ajouter</Link>
         </button>
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="mb-3 flex flex-wrap items-center justify-between">
           <SearchBar query={search} onQuery={setSearch} />
           <Limit setLimit={setLimit} limit={limit} />
         </div>
@@ -53,8 +57,15 @@ export default function ListStudent() {
             </thead>
             <tbody>
               {students?.length === 0 ? (
-                <tr className="flex items-center justify-center">
-                  <td className="text-center">Not Found</td>
+                <tr className="">
+                  <td
+                    rowSpan={8}
+                    colSpan={4}
+                    className="text-center"
+                    style={{ height: "250px" }}
+                  >
+                    Not Found
+                  </td>
                 </tr>
               ) : (
                 students?.map((student: Student) => (
@@ -65,8 +76,9 @@ export default function ListStudent() {
           </table>
         </div>
         {/*Pagination*/}
-        <div className="mt-4 text-end">
+        <div className="mt-5 flex justify-between">
           <h1>Tolale : {data?.totale || 0}</h1>
+          <Pagination page={page} totalPage={totalePages} onPage={setPage} />
         </div>
       </div>
     </div>
