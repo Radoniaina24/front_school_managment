@@ -11,7 +11,7 @@ export default function Pagination({
   totalPage: number;
 }) {
   const next = () => {
-    if (page === totalPage) return;
+    if (page === totalPage || page - 1 === totalPage) return;
 
     onPage(page + 1);
   };

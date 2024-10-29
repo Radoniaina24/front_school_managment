@@ -8,10 +8,11 @@ import Limit from "./limit";
 import ListItem from "./listItem";
 import Link from "next/link";
 import Pagination from "./Pagination";
+import DeleteButton from "./DeleteButton";
 
 export default function ListStudent() {
   const [search, setSearch] = useState<string>("");
-  const [limit, setLimit] = useState<number>(2);
+  const [limit, setLimit] = useState<number>(10);
   const [page, setPage] = useState<number>(1);
   const { data, isLoading, error } = useGetStudentQuery({
     search,

@@ -208,13 +208,13 @@ const config: Config = {
         280: "70rem",
         292.5: "73.125rem",
       },
-      // maxHeight: {
-      //   35: "8.75rem",
-      //   70: "17.5rem",
-      //   90: "22.5rem",
-      //   550: "34.375rem",
-      //   300: "18.75rem",
-      // },
+      maxHeight: {
+        35: "8.75rem",
+        70: "17.5rem",
+        90: "22.5rem",
+        550: "34.375rem",
+        300: "18.75rem",
+      },
       minWidth: {
         22.5: "5.625rem",
         42.5: "10.625rem",
@@ -343,6 +343,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [flowbite.plugin()],
+  // plugins: [flowbite.plugin()],
 };
 export default config;

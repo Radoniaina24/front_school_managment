@@ -1,23 +1,11 @@
 import Student from "@/interface/Student";
 import React from "react";
 import ViewStudent from "./svg/view";
-import Delete from "./svg/delete";
 import Edit from "./svg/edit";
-import { useDeleteStudentMutation } from "@/lib/api/studentApi";
-import { useSnackbar } from "@/lib/context/SnackbarContext";
 import Classe from "@/interface/Classe";
+import DeleteButton from "./DeleteButton";
 
 export default function ListItem({ student }: { student: Student }) {
-  const [deleteStudent, responseDeleteStudent] = useDeleteStudentMutation();
-  const { showSnackbar } = useSnackbar();
-  async function handleDelete(id: string) {
-    try {
-      await deleteStudent(id).unwrap();
-      showSnackbar("Student delete successfully");
-    } catch (error) {
-      showSnackbar("Error", "error");
-    }
-  }
   return (
     <tr className="cursor-pointer bg-white hover:bg-gray dark:bg-boxdark  dark:text-white dark:hover:bg-gray-600">
       <th
@@ -39,12 +27,7 @@ export default function ListItem({ student }: { student: Student }) {
           <button className="hover:text-primary">
             <ViewStudent />
           </button>
-          <button
-            className="hover:text-primary"
-            onClick={() => handleDelete(student._id)}
-          >
-            <Delete />
-          </button>
+          <DeleteButton id={student._id} />
           <button className="hover:text-primary">
             <Edit />
           </button>
