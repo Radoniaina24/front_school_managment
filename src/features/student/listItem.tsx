@@ -7,9 +7,10 @@ import DeleteButton from "./DeleteButton";
 import Image from "next/image";
 
 export default function ListItem({ student }: { student: Student }) {
+  const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/public/img/students/${student.photo}`;
   const photo = student.photo ? (
     <Image
-      src={"http://localhost:8080/img/students/" + student.photo}
+      src={imageUrl}
       alt={"photo"}
       width={50}
       height={50}
