@@ -14,6 +14,7 @@ export default function ListItem({ student }: { student: Student }) {
       width={50}
       height={50}
       className="rounded-full"
+      unoptimized
     />
   ) : (
     ""
