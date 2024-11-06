@@ -12,7 +12,7 @@ import { useSnackbar } from "@/lib/context/SnackbarContext";
 import Spinner from "@/components/spinner/Spinner";
 import { useRouter } from "next/navigation";
 import SelectClasse from "./selectedClasse";
-import { error } from "console";
+import InputFile from "@/components/Form/InputFile";
 const StudentSchema = yup.object({
   name: yup.string().required("Ce champ est requis"),
   first_name: yup.string().required("Ce champ est requis"),
@@ -37,8 +37,20 @@ const StudentSchema = yup.object({
 
   mail: yup.string().email("Assurez-vous que le courriel est valide."),
   classe: yup.string().required("Ce champ est requis"),
+  photo: yup
+    .mixed()
+    .nullable()
+    .test("fileFormat", "Seules les images sont acceptées", (value: any) => {
+      // Accepte une valeur vide (non obligatoire)
+      if (!value || value.length === 0) return true;
+
+      // Vérifie le type de fichier s'il y a une valeur
+      return ["image/jpeg", "image/png", "image/jpg"].includes(value.type);
+    }),
 });
+
 const initialValues: Omit<Student, "_id"> = {
+  photo: "",
   name: "",
   first_name: "",
   gender: "Garçon",
@@ -59,7 +71,7 @@ export default function FormStudent() {
   const navigation = useRouter();
   const { showSnackbar } = useSnackbar();
   const [addStudent, responseAddStudent] = useAddStudentMutation();
-  async function handleRegisterUser(newStudent: Omit<Student, "_id">) {
+  async function handleRegisterUser(newStudent: any) {
     try {
       const response = await addStudent(newStudent).unwrap();
       showSnackbar(response?.message, "success"); // message, type(error, success)
@@ -87,10 +99,28 @@ export default function FormStudent() {
     setFieldValue,
   } = formik;
   async function onSubmit(value: Omit<Student, "_id">) {
-    handleRegisterUser(value);
+    const formData = new FormData();
+    formData.append("photo", value.photo);
+    formData.append("name", value.name);
+    formData.append("first_name", value.first_name);
+    formData.append("gender", value.gender);
+    formData.append("date_of_birth", value.date_of_birth);
+    formData.append("classe", value.classe);
+    formData.append("address", value.address);
+    formData.append("phone", value.phone);
+    formData.append("mail", value.mail);
+    formData.append("mother_name", value.mother_name);
+    formData.append("mother_occupation", value.mother_occupation);
+    formData.append("mother_phone", value.mother_phone);
+    formData.append("father_name", value.father_name);
+    formData.append("father_occupation", value.father_occupation);
+    formData.append("father_phone", value.father_phone);
+    formData.append("submission", value.submission);
+
+    handleRegisterUser(formData);
     resetForm();
   }
-  console.log(errors);
+
   return (
     <>
       <Breadcrumb pageName={"Add student"} />
@@ -241,6 +271,13 @@ export default function FormStudent() {
               error={errors.submission}
             />
           </div>
+          <InputFile
+            label="Photo de profil"
+            setFieldValue={setFieldValue}
+            name="photo"
+            error={errors.photo}
+            touched={touched.photo}
+          />
           {responseAddStudent.isLoading ? (
             <Spinner />
           ) : (

@@ -4,10 +4,28 @@ import ViewStudent from "./svg/view";
 import Edit from "./svg/edit";
 import Classe from "@/interface/Classe";
 import DeleteButton from "./DeleteButton";
+import Image from "next/image";
 
 export default function ListItem({ student }: { student: Student }) {
+  const photo = student.photo ? (
+    <Image
+      src={"http://localhost:8080/img/students/" + student.photo}
+      alt={"photo"}
+      width={50}
+      height={50}
+      className="rounded-full"
+    />
+  ) : (
+    ""
+  );
   return (
     <tr className="cursor-pointer bg-white hover:bg-gray dark:bg-boxdark  dark:text-white dark:hover:bg-gray-600">
+      <th
+        scope="row"
+        className="whitespace-nowrap border-b border-[#eee] px-6 py-4 font-medium text-gray-900 dark:border-strokedark dark:text-white"
+      >
+        {photo}
+      </th>
       <th
         scope="row"
         className="whitespace-nowrap border-b border-[#eee] px-6 py-4 font-medium text-gray-900 dark:border-strokedark dark:text-white"

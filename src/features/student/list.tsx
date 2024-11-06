@@ -43,6 +43,9 @@ export default function ListStudent() {
             <thead className="sticky top-0">
               <tr className=" bg-gray-2 text-left dark:bg-meta-4 dark:text-white">
                 <th scope="col" className="px-6 py-3">
+                  Photo
+                </th>
+                <th scope="col" className="px-6 py-3">
                   Nom complet
                 </th>
                 <th scope="col" className="px-6 py-4">

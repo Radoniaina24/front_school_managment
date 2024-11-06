@@ -1,4 +1,5 @@
 export default interface Student {
+  photo: File | string;
   _id: string;
   name: string;
   first_name: string;
