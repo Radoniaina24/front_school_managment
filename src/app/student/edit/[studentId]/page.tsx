@@ -3,7 +3,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import FormStudent from "@/features/student/FormStudent";
 import { useGetStudentByIdQuery } from "@/lib/api/studentApi";
 import React from "react";
-export default function page({ params }: { params: { studentId: string } }) {
+export default function Page({ params }: { params: { studentId: string } }) {
   const { data, isLoading, error } = useGetStudentByIdQuery(params.studentId);
   if (isLoading) return <p>Chargement...</p>;
   if (error) return <p>Erreur lors du chargement des données.</p>;
