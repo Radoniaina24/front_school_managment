@@ -9,16 +9,14 @@ export default function InputFile({
 }: {
   label: string;
   name: string;
-  setFieldValue: any;
-  error: any;
-  touched: any;
+  setFieldValue: (field: string, value: any) => void;
+  error: string | undefined;
+  touched: boolean | undefined;
 }) {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log();
     const file =
       (event.currentTarget.files && event.currentTarget.files[0]) || null;
-
-    setFieldValue("photo", file);
+    setFieldValue(name, file);
   };
   return (
     <div className="mx-auto max-w-md font-[sans-serif]">

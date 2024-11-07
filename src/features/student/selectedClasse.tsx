@@ -35,7 +35,7 @@ const SelectClasse = ({
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
           id={id}
-          value={value}
+          value={value?.level}
           onChange={onChange}
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-2 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary `}
         >

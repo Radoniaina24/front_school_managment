@@ -5,6 +5,7 @@ import Edit from "./svg/edit";
 import Classe from "@/interface/Classe";
 import DeleteButton from "./DeleteButton";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ListItem({ student }: { student: Student }) {
   const photo = student.photo ? (
@@ -37,9 +38,7 @@ export default function ListItem({ student }: { student: Student }) {
         {student.date_of_birth}
       </td>
       <td className="border-b border-[#eee] px-6 py-4 dark:border-strokedark">
-        {student?.classe?.length > 0
-          ? student.classe.map((item: Classe) => item.level)
-          : "-"}
+        {student.classe.level ? student.classe.level : "-"}
       </td>
       <td className=" border-b border-[#eee] px-4 py-5 dark:border-strokedark">
         <div className="flex items-center space-x-3.5">
@@ -47,9 +46,9 @@ export default function ListItem({ student }: { student: Student }) {
             <ViewStudent />
           </button>
           <DeleteButton id={student._id} />
-          <button className="hover:text-primary">
+          <Link href={`/student/edit/${student._id}`}>
             <Edit />
-          </button>
+          </Link>
         </div>
       </td>
     </tr>

@@ -1,3 +1,7 @@
+type Classe = {
+  _id: string;
+  level: string;
+};
 export default interface Student {
   photo: File | string;
   _id: string;
