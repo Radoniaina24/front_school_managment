@@ -14,7 +14,10 @@ export default function ListClasse() {
   if (classes.length === 0) {
     return (
       <div className="flex h-screen items-center justify-center bg-white dark:bg-black">
-        <h2>Il n'y a pas encore de classe existante, merci d'en ajouter une</h2>
+        <h2>
+          Il n&apos;y a pas encore de classe existante, merci d&apos;en ajouter
+          une
+        </h2>
       </div>
     );
   }
