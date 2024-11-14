@@ -11,9 +11,16 @@ export default function ListClasse() {
   if (isLoading) {
     return <Loader />;
   }
+  if (classes.length === 0) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-white dark:bg-black">
+        <h2>Il n'y a pas encore de classe existante, merci d'en ajouter une</h2>
+      </div>
+    );
+  }
   return (
     <div>
-      <ul className=" mt-5  divide-y dark:divide-gray-700">
+      <ul className="mt-5 h-screen divide-y overflow-y-auto dark:divide-gray-700">
         {classes?.map((item: Classe) => (
           <ListItem classe={item} key={item._id} />
         ))}

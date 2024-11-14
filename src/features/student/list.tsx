@@ -24,7 +24,7 @@ export default function ListStudent() {
   return (
     <div>
       <Breadcrumb pageName={"List students"} />
-      <div className="rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
+      <div className=" rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
         <button
           type="submit"
           className="mb-3 cursor-pointer rounded border  border-stroke bg-primary px-4 py-1 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
@@ -35,10 +35,7 @@ export default function ListStudent() {
           <SearchBar query={search} onQuery={setSearch} />
           <Limit setLimit={setLimit} limit={limit} />
         </div>
-        <div
-          className="relative  overflow-x-auto overflow-y-auto"
-          style={{ height: "350px" }}
-        >
+        <div className="relative h-screen overflow-x-auto overflow-y-auto">
           <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
             <thead className="sticky top-0">
               <tr className=" bg-gray-2 text-left dark:bg-meta-4 dark:text-white">

@@ -3,13 +3,11 @@ import Classe from "@/interface/Classe";
 import * as yup from "yup";
 import React from "react";
 import { useFormik } from "formik";
-import Input from "@/components/Form/Input";
-import { Button } from "flowbite-react";
 import { useSnackbar } from "@/lib/context/SnackbarContext";
 import { useAddClasseMutation } from "@/lib/api/classeApi";
 // Validation Schema
 const classeSchema = yup.object({
-  level: yup.string().required("Ce champ est requis"),
+  level: yup.string(),
 });
 // Initial Values
 const initialValues: Omit<Classe, "_id"> = {
@@ -27,6 +25,7 @@ export default function FormClasse() {
     onSubmit,
   });
   async function onSubmit(value: Omit<Classe, "_id">) {
+    if (!value.level) return;
     try {
       const response = await addClasse(value).unwrap();
       showSnackbar(response?.message, "success"); // message, type(error, success)
@@ -49,22 +48,31 @@ export default function FormClasse() {
     setFieldValue,
   } = formik;
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
+    <form
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      className="mx-auto flex max-w-lg items-center gap-2"
+    >
+      <label htmlFor="voice-search" className="sr-only">
+        Search
+      </label>
       <div className="">
-        <Input
-          label=""
+        <input
           type="text"
           id="level"
           value={values.level}
           onChange={handleChange}
-          error={errors.level}
-          touched={touched.level}
-          placeholder="Nom de la classe"
+          className="rounded border-[1.5px] border-stroke bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+          placeholder="Nom de la classe..."
+          required
         />
-        <Button size="sm" className="bg-success" type="submit">
-          Ajouter une classe
-        </Button>
       </div>
+      <button
+        type="submit"
+        className="ms-2 inline-flex items-center rounded-lg border border-blue-700 bg-success px-3 py-2.5 text-sm font-medium text-white hover:bg-success focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Ajouter
+      </button>
     </form>
   );
 }

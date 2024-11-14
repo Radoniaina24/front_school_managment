@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <div>
-      <Breadcrumb pageName={"Classe"} />
+      <Breadcrumb pageName={"Classe liste"} />
       <div className="rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
         {/* form add classe */}
         <FormClasse />
