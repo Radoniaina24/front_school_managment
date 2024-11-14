@@ -38,7 +38,7 @@ export default function ListItem({ student }: { student: Student }) {
         {student.date_of_birth}
       </td>
       <td className="border-b border-[#eee] px-6 py-4 dark:border-strokedark">
-        {student.classe.level ? student.classe.level : "-"}
+        {student?.classe?.level ? student?.classe?.level : "-"}
       </td>
       <td className=" border-b border-[#eee] px-4 py-5 dark:border-strokedark">
         <div className="flex items-center space-x-3.5">
