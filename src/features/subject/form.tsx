@@ -1,31 +1,31 @@
 "use client";
-import Classe from "@/interface/Classe";
 import * as yup from "yup";
 import React from "react";
 import { useFormik } from "formik";
 import { useSnackbar } from "@/lib/context/SnackbarContext";
-import { useAddClasseMutation } from "@/lib/api/classeApi";
+import Subject from "@/interface/Subject";
+import { useAddSubjectMutation } from "@/lib/api/subjectApi";
 // Validation Schema
-const classeSchema = yup.object({
-  level: yup.string().required("Le nom de la classe est obligatoire"),
+const subjectSchema = yup.object({
+  name: yup.string().required(),
 });
 // Initial Values
-const initialValues: Omit<Classe, "_id"> = {
-  level: "",
+const initialValues: Omit<Subject, "_id"> = {
+  name: "",
 };
-export default function FormClasse() {
+export default function FormSubject() {
   //Notification
   const { showSnackbar } = useSnackbar();
   //RTK query
-  const [addClasse, responseAddClasse] = useAddClasseMutation();
+  const [addSubject, responseAddSubject] = useAddSubjectMutation();
   // Formik
   const formik = useFormik({
     initialValues: initialValues,
-    validationSchema: classeSchema,
-    onSubmit: async (values, { resetForm }) => {
+    validationSchema: subjectSchema,
+    onSubmit: async (value, { resetForm }) => {
       try {
-        const response = await addClasse(values).unwrap();
-        showSnackbar(response?.message, "success");
+        const response = await addSubject(value).unwrap();
+        showSnackbar(response?.message, "success"); // message, type(error, success)
         resetForm();
       } catch (error: any) {
         const errorMessage =
@@ -34,9 +34,7 @@ export default function FormClasse() {
       }
     },
   });
-
   const { values, handleChange, handleSubmit, errors, touched } = formik;
-  console.log(errors);
   return (
     <form
       onSubmit={handleSubmit}
@@ -49,10 +47,10 @@ export default function FormClasse() {
       <div className="">
         <input
           type="text"
-          id="level"
-          value={values.level}
+          id="name"
+          value={values.name}
           onChange={handleChange}
-          className={`rounded border-[1.5px]  bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary ${errors.level && touched.level ? "border-red-500" : "border-stroke"}`}
+          className={`rounded border-[1.5px]  bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary ${errors.name && touched.name ? "border-red-500" : "border-stroke"}`}
           placeholder="Nom de la classe..."
         />
       </div>

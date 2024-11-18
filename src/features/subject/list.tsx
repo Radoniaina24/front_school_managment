@@ -1,23 +1,24 @@
 "use client";
-import Classe from "@/interface/Classe";
-import {
-  useDeleteClasseMutation,
-  useGetClasseQuery,
-} from "@/lib/api/classeApi";
 import React from "react";
 import Loader from "@/components/common/Loader";
+import {
+  useDeleteSubjectMutation,
+  useGetAllSubjectQuery,
+} from "@/lib/api/subjectApi";
+import Subject from "@/interface/Subject";
 import DeleteButton from "@/components/Button/DeleteButton";
-export default function ListClasse() {
-  const { data, isLoading, error } = useGetClasseQuery("");
-  const classes = data?.classes;
+export default function ListSubject() {
+  const { data, isLoading, error } = useGetAllSubjectQuery("");
+
+  const subjects = data?.subjects;
   if (isLoading) {
     return <Loader />;
   }
-  if (classes.length === 0) {
+  if (subjects.length === 0) {
     return (
       <div className="flex h-screen items-center justify-center bg-white dark:bg-black">
         <h2>
-          Il n&apos;y a pas encore de classe existante, merci d&apos;en ajouter
+          Il n&apos;y a pas encore de matière existante, merci d&apos;en ajouter
           une
         </h2>
       </div>
@@ -26,24 +27,24 @@ export default function ListClasse() {
   return (
     <div>
       <ul className="mt-5 h-screen divide-y overflow-y-auto dark:divide-gray-700">
-        {classes?.map((item: Classe) => (
-          <ListItem classe={item} key={item._id} />
+        {subjects?.map((item: Subject) => (
+          <ListItem subject={item} key={item._id} />
         ))}
       </ul>
     </div>
   );
 }
 
-function ListItem({ classe }: { classe: Classe }) {
-  const [deleteClasse] = useDeleteClasseMutation();
+function ListItem({ subject }: { subject: Subject }) {
+  const [deleteSubject] = useDeleteSubjectMutation();
   return (
     <li className="whitespace-nowrap border-b border-[#eee] px-6 py-4  font-semibold text-gray-900 dark:border-strokedark dark:text-white">
       <div className="flex items-center justify-between">
-        <div>{classe.level}</div>
+        <div>{subject.name}</div>
         <div>
           <DeleteButton
-            id={classe._id}
-            onDelete={(id) => deleteClasse(id).unwrap()}
+            id={subject._id}
+            onDelete={(id: string) => deleteSubject(id).unwrap()}
           />
         </div>
       </div>

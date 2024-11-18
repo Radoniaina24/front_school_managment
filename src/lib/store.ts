@@ -4,6 +4,7 @@ import { counterSlice } from "./features/counter/counterSlice";
 import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
 import { studentAPI } from "./api/studentApi";
 import { classeAPI } from "./api/classeApi";
+import { subjectAPI } from "./api/subjectApi";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -20,6 +21,7 @@ export const makeStore = () => {
     reducer: {
       [studentAPI.reducerPath]: studentAPI.reducer,
       [classeAPI.reducerPath]: classeAPI.reducer,
+      [subjectAPI.reducerPath]: subjectAPI.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
@@ -27,6 +29,7 @@ export const makeStore = () => {
       return getDefaultMiddleware().concat(
         studentAPI.middleware,
         classeAPI.middleware,
+        subjectAPI.middleware,
       );
     },
   });
