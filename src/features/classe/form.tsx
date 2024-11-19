@@ -31,12 +31,12 @@ export default function FormClasse() {
         const errorMessage =
           error?.data?.message || "Vérifiez votre connexion internet";
         showSnackbar(errorMessage, "error");
+        resetForm();
       }
     },
   });
 
   const { values, handleChange, handleSubmit, errors, touched } = formik;
-  console.log(errors);
   return (
     <form
       onSubmit={handleSubmit}

@@ -167,8 +167,7 @@ export default function FormStudent({
     if (studentEdit?.photo) {
       setFieldValue("photo", "");
     }
-  }, [studentEdit]);
-
+  }, [setFieldValue, studentEdit]);
   return (
     <>
       <form onSubmit={handleSubmit} autoComplete="off">
@@ -335,8 +334,9 @@ export default function FormStudent({
               Modifier
             </button>
             <button
-              type="submit"
+              type="button"
               className="cursor-pointer rounded-lg border border-stroke  bg-warning px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
+              onClick={() => navigation.push("/student")}
             >
               Annuler
             </button>

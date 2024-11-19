@@ -9,6 +9,7 @@ import ListItem from "./listItem";
 import Link from "next/link";
 import Pagination from "./Pagination";
 import DeleteButton from "./DeleteButton";
+import Loader from "@/components/common/Loader";
 
 export default function ListStudent() {
   const [search, setSearch] = useState<string>("");
@@ -21,6 +22,33 @@ export default function ListStudent() {
   });
   const students = data?.students;
   const totalePages = data?.totalPages;
+  if (isLoading) return <Loader />;
+  if (error) {
+    return (
+      <div>
+        <Breadcrumb pageName={"List students"} />
+        <div className=" rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
+          <div className="flex h-screen items-center justify-center bg-white dark:bg-black">
+            <div
+              className="relative rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
+              role="alert"
+            >
+              <strong className="font-bold">
+                🚨 Erreur : Problème avec le serveur
+              </strong>
+              <span className="block sm:inline">
+                La liste des étudiants ne peut pas être affichée pour le moment.
+              </span>
+              <span className="mt-2 block sm:inline">
+                Veuillez vérifier la connexion ou contacter l&apos;équipe
+                technique.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       <Breadcrumb pageName={"List students"} />

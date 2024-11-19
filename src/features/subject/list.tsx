@@ -11,10 +11,30 @@ export default function ListSubject() {
   const { data, isLoading, error } = useGetAllSubjectQuery("");
 
   const subjects = data?.subjects;
+  if (error) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-white dark:bg-black">
+        <div
+          className="relative rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700"
+          role="alert"
+        >
+          <strong className="font-bold">
+            🚨 Erreur : Problème avec le serveur
+          </strong>
+          <span className="block sm:inline">
+            La liste des matières ne peut pas être affichée pour le moment.
+          </span>
+          <span className="mt-2 block sm:inline">
+            Veuillez vérifier la connexion ou contacter l&apos;équipe technique.
+          </span>
+        </div>
+      </div>
+    );
+  }
   if (isLoading) {
     return <Loader />;
   }
-  if (subjects.length === 0) {
+  if (subjects?.length === 0) {
     return (
       <div className="flex h-screen items-center justify-center bg-white dark:bg-black">
         <h2>
