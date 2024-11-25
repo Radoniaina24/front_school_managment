@@ -1,22 +1,25 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { authentication } from "@/lib/features/auth/authSlice";
+import { selectToken } from "@/lib/features/auth/authSlice";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
-  const isAuthenticated = useSelector(authentication); // État d'authentification
+  const token = useSelector(selectToken); // État d'authentification
   const pathname = usePathname(); // Récupère l'URL actuelle
   const router = useRouter();
+  const [tokenStorage, setTokenStorage] = useState(
+    localStorage.getItem("token") || null,
+  );
   useEffect(() => {
-    if (isAuthenticated === undefined) {
+    if (tokenStorage === undefined) {
       return; // Attente de la résolution de l'état
     }
-    if (!isAuthenticated && pathname !== "/login") {
+    if (!tokenStorage && pathname !== "/login") {
       // Redirige les utilisateurs non authentifiés vers la page de connexion
       router.replace("/login");
     }
-  }, [isAuthenticated, pathname, router]);
-  if (!isAuthenticated) return;
+  }, [tokenStorage, pathname, router]);
+  if (!tokenStorage) return;
   return <>{children}</>;
 }

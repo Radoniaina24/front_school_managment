@@ -21,6 +21,7 @@ const DropdownUser = () => {
       // Si la déconnexion réussit, effacer l'état d'authentification de Redux
       dispatch(logout());
       navigation.push("/login");
+      localStorage.removeItem("token");
     } catch (err) {
       console.error("Logout failed", err);
     }

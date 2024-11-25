@@ -36,6 +36,7 @@ export default function Login() {
     try {
       const userData = await login(values).unwrap();
       dispatch(setCredentials(userData)); // Sauvegarder token et user dans Redux
+      localStorage.setItem("token", userData?.token);
       navigation.push("/");
     } catch (err) {
       showSnackbar("Mots de passe ou email incorrecte", "error");
