@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import Profile from "./profile/page";
 import Dashboard from "@/components/Dashboard/Dashboard";
-import Link from "next/link";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 export const metadata: Metadata = {
   title: "Dashboard | Intello",
@@ -9,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <DefaultLayout>
       <Dashboard />
-    </>
+    </DefaultLayout>
   );
 }

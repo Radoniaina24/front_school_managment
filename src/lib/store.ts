@@ -5,10 +5,12 @@ import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
 import { studentAPI } from "./api/studentApi";
 import { classeAPI } from "./api/classeApi";
 import { subjectAPI } from "./api/subjectApi";
+import { authAPI } from "./api/authApi";
+import { authReducer, authSlice } from "./features/auth/authSlice";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(counterSlice, quotesApiSlice);
+const rootReducer = combineSlices(counterSlice, quotesApiSlice, authSlice);
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -19,6 +21,8 @@ export type RootState = ReturnType<typeof rootReducer>;
 export const makeStore = () => {
   return configureStore({
     reducer: {
+      auth: authReducer,
+      [authAPI.reducerPath]: authAPI.reducer,
       [studentAPI.reducerPath]: studentAPI.reducer,
       [classeAPI.reducerPath]: classeAPI.reducer,
       [subjectAPI.reducerPath]: subjectAPI.reducer,
@@ -27,6 +31,7 @@ export const makeStore = () => {
     // and other useful features of `rtk-query`.
     middleware: (getDefaultMiddleware) => {
       return getDefaultMiddleware().concat(
+        authAPI.middleware,
         studentAPI.middleware,
         classeAPI.middleware,
         subjectAPI.middleware,

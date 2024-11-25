@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import FormSubject from "@/features/subject/form";
 import ListSubject from "@/features/subject/list";
 import { Metadata } from "next";
@@ -8,14 +9,16 @@ export const metadata: Metadata = {
 };
 export default function page() {
   return (
-    <div>
-      <Breadcrumb pageName={"Subject liste"} />
-      <div className="rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
-        {/* form add subject */}
-        <FormSubject />
-        {/* Liste subject */}
-        <ListSubject />
+    <DefaultLayout>
+      <div>
+        <Breadcrumb pageName={"Subject liste"} />
+        <div className="rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
+          {/* form add subject */}
+          <FormSubject />
+          {/* Liste subject */}
+          <ListSubject />
+        </div>
       </div>
-    </div>
+    </DefaultLayout>
   );
 }

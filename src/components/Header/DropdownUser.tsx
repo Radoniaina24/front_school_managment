@@ -1,10 +1,28 @@
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ClickOutside from "@/components/ClickOutside";
+import { useDispatch } from "react-redux";
+import { logout } from "@/lib/features/auth/authSlice";
+import { useGetUserQuery, useLogoutMutation } from "@/lib/api/authApi";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { data } = useGetUserQuery("");
+  const [logoutUser] = useLogoutMutation();
+  async function handleLogout() {
+    console.log("sdsdsdsd");
+    try {
+      // Appeler la mutation de déconnexion
+      await logoutUser("").unwrap();
+      // Si la déconnexion réussit, effacer l'état d'authentification de Redux
+      dispatch(logout());
+    } catch (err) {
+      console.error("Logout failed", err);
+    }
+  }
 
   return (
     <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
@@ -15,9 +33,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Caleb
+            {data?.username || ""}
           </span>
-          <span className="block text-xs">Dev FullStack</span>
+          <span className="block text-xs"> {data?.role || ""}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -128,7 +146,10 @@ const DropdownUser = () => {
               </Link>
             </li>
           </ul>
-          <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+          <button
+            className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+            onClick={() => handleLogout()}
+          >
             <svg
               className="fill-current"
               width="22"

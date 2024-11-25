@@ -6,6 +6,7 @@ import "@/css/satoshi.css";
 import "@/css/style.css";
 import SnackbarProvider from "@/lib/context/SnackbarContext";
 import { Metadata } from "next/types";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 export const metadata: Metadata = {
   title: {
     absolute: "",
@@ -21,14 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <StoreProvider>
+    <StoreProvider>
+      <html lang="en">
+        <body>
           <SnackbarProvider>
             <Loading>{children}</Loading>
           </SnackbarProvider>
-        </StoreProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
