@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { authentication } from "@/lib/features/auth/authSlice";
 import { usePathname, useRouter } from "next/navigation";
-import Loader from "../common/Loader";
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useSelector(authentication); // État d'authentification
@@ -18,5 +17,6 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
       router.replace("/login");
     }
   }, [isAuthenticated, pathname, router]);
+  if (!isAuthenticated) return;
   return <>{children}</>;
 }

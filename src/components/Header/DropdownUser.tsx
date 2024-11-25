@@ -4,21 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import ClickOutside from "@/components/ClickOutside";
 import { useDispatch } from "react-redux";
-import { logout } from "@/lib/features/auth/authSlice";
 import { useGetUserQuery, useLogoutMutation } from "@/lib/api/authApi";
+import { logout } from "@/lib/features/auth/authSlice";
+import { useRouter } from "next/navigation";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
   const { data } = useGetUserQuery("");
   const [logoutUser] = useLogoutMutation();
+  const navigation = useRouter();
   async function handleLogout() {
-    console.log("sdsdsdsd");
     try {
       // Appeler la mutation de déconnexion
       await logoutUser("").unwrap();
       // Si la déconnexion réussit, effacer l'état d'authentification de Redux
       dispatch(logout());
+      navigation.push("/login");
     } catch (err) {
       console.error("Logout failed", err);
     }

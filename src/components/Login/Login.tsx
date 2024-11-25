@@ -169,11 +169,18 @@ export default function Login() {
         </div>
 
         <div className="mb-5">
-          <input
+          <button
+            disabled={isLoading}
             type="submit"
-            value="Se connecter"
-            className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-3 text-white transition hover:bg-opacity-90"
-          />
+            className={`w-full cursor-pointer rounded-lg border ${isLoading ? " bg-primary bg-opacity-90" : "bg-primary"}  border-primary bg-primary p-3 text-white transition hover:bg-opacity-90`}
+          >
+            <div className="flex items-center justify-center gap-2">
+              Se connecter{" "}
+              {isLoading && (
+                <div className="h-5 w-5 animate-spin rounded-full border-4 border-solid border-white border-t-transparent"></div>
+              )}
+            </div>
+          </button>
         </div>
       </div>
     </form>
