@@ -3,15 +3,24 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ClickOutside from "@/components/ClickOutside";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetUserQuery, useLogoutMutation } from "@/lib/api/authApi";
-import { logout } from "@/lib/features/auth/authSlice";
+import { logout, selectToken } from "@/lib/features/auth/authSlice";
 import { useRouter } from "next/navigation";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
-  const { data } = useGetUserQuery("");
+  // const { data } = useGetUserQuery("");
+  const [user, setUser] = useState(() => {
+    try {
+      const storedUser = localStorage.getItem("user");
+      return storedUser ? JSON.parse(storedUser) : null;
+    } catch (error) {
+      console.error("Erreur lors de l'analyse du JSON :", error);
+      return null;
+    }
+  });
   const [logoutUser] = useLogoutMutation();
   const navigation = useRouter();
   async function handleLogout() {
@@ -21,7 +30,6 @@ const DropdownUser = () => {
       // Si la déconnexion réussit, effacer l'état d'authentification de Redux
       dispatch(logout());
       navigation.push("/login");
-      localStorage.removeItem("token");
     } catch (err) {
       console.error("Logout failed", err);
     }
@@ -36,9 +44,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            {data?.username || ""}
+            {user?.username || ""}
           </span>
-          <span className="block text-xs"> {data?.role || ""}</span>
+          <span className="block text-xs"> {user?.role || ""}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">

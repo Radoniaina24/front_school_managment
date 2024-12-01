@@ -48,7 +48,17 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
 export const authAPI = createApi({
   reducerPath: "authAPI",
   tagTypes: ["authentication"],
-  baseQuery: baseQueryWithReauth,
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
+    prepareHeaders: (headers, { getState }) => {
+      const token = (getState() as any).auth.token; // Récupération du token JWT depuis Redux
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+      return headers;
+    },
+    credentials: "include", // S'assurer que les cookies sont envoyés avec la requête
+  }),
   endpoints: (builder) => ({
     getUser: builder.query({
       query: () => {
@@ -82,15 +92,3 @@ export const authAPI = createApi({
 });
 
 export const { useLoginMutation, useGetUserQuery, useLogoutMutation } = authAPI;
-
-// baseQuery: fetchBaseQuery({
-//   baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
-//   prepareHeaders: (headers, { getState }) => {
-//     const token = (getState() as any).auth.token; // Récupération du token JWT depuis Redux
-//     if (token) {
-//       headers.set("Authorization", `Bearer ${token}`);
-//     }
-//     return headers;
-//   },
-//   credentials: "include", // S'assurer que les cookies sont envoyés avec la requête
-// }),

@@ -35,8 +35,8 @@ export default function Login() {
   const Submit = async (values: { email: string; password: string }) => {
     try {
       const userData = await login(values).unwrap();
-      dispatch(setCredentials(userData)); // Sauvegarder token et user dans Redux
-      localStorage.setItem("token", userData?.token);
+      dispatch(setCredentials({ token: userData?.token })); // Sauvegarder token  dans Redux et user dans redux
+      localStorage.setItem("user", JSON.stringify(userData?.user));
       navigation.push("/");
     } catch (err) {
       showSnackbar("Mots de passe ou email incorrecte", "error");
